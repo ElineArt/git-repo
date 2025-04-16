@@ -1,0 +1,28 @@
+# Welcome message
+print("Welcome to the Book Club Points System")
+
+# Input validation loop
+while True:
+    try:
+        month_book_quantity = int(input("How many books did you purchase this month? "))
+        if month_book_quantity < 0:
+            print("Invalid input. Please enter a non-negative number.")
+        else:
+            break
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+
+# Determine points based on updated book quantity ranges
+if month_book_quantity <= 1:
+    points = 0
+elif month_book_quantity <= 3:
+    points = 5
+elif month_book_quantity <= 5:
+    points = 15
+elif month_book_quantity <= 7:
+    points = 30
+else:  # 8 or more books
+    points = 60
+
+# Display result
+print(f"This month you earned {points} points.")
